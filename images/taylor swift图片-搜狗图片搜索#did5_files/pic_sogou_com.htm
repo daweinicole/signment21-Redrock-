@@ -1,0 +1,317 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>搜狗图片-上网从搜狗开始</title>
+
+<link href="/css/home.min.css?rel=1520795b33" rel="stylesheet" type="text/css">
+
+<link rel="shortcut icon" href="http://logo.www.sogou.com/images/logo2014/new/favicon.ico">
+<link rel="Bookmark" href="http://logo.www.sogou.com/images/logo2014/new/favicon.ico">
+<link rel="dns-prefetch" href="http://img01.sogoucdn.com/">
+<link rel="dns-prefetch" href="http://img02.sogoucdn.com/">
+<link rel="dns-prefetch" href="http://img03.sogoucdn.com/">
+<link rel="dns-prefetch" href="http://img04.sogoucdn.com/">
+<!--[if IE 6]>       
+	<script src="/home_2014/js/DD_belatedPNG_0.0.8a.js"></script>
+	<script>
+	  DD_belatedPNG.fix('*');
+	</script>
+<![endif]-->
+</head>
+<body>
+<!--star header-->
+<div id="header">
+	<div class="searchnav">
+			   <ul class="topnav">
+				<li><a onclick="uigsPB('topnav_news');navTab(this)" href="http://news.sogou.com/news?ie=utf8&query=">新闻</a></li>
+				<li><a onclick="uigsPB('topnav_web');navTab(this)" href="http://www.sogou.com/web?p=44240100&ie=utf8&query=">网页</a></li>
+				<li><a onclick="uigsPB('topnav_weixin');navTab(this)" href="http://weixin.sogou.com/weixin?type=2&ie=utf8&p=44351200&query=">微信</a></li>
+				<li><a onclick="uigsPB('topnav_zhihu');navTab(this)" href="http://zhihu.sogou.com/zhihu?ie=utf8&p=44351202&query=" >知乎</a></li>
+				<li class="cur">图片</li>
+				<li><a onclick="uigsPB('topnav_video');navTab(this)" href="http://v.sogou.com/v?ie=utf8&query=">视频</a></li>
+				<li><a onclick="uigsPB('topnav_baike');navTab(this)" href="http://mingyi.sogou.com/mingyi?ie=utf8&query=">明医</a></li>
+				<li><a onclick="uigsPB('topnav_gouwu');navTab(this)" href="http://english.sogou.com/english?b_o_e=1&ie=utf8&query=">英文<img src="/style2013/images/new.png" height="16" width="13" alt="new" style="position:absolute;margin-top:1px;*margin-top:-5px;_margin-top:-3px;vertical-align: baseline;"/></a></li>
+				<li><a onclick="uigsPB('topnav_map');navTab(this)" href="http://map.sogou.com/">地图</a></li>
+				<li><a onclick="uigsPB('topnav_more');this.href='http://www.sogou.com/docs/more.htm?kw='+encodeURIComponent(document.getElementById('queryinput').value);" href="http://www.sogou.com/docs/more.htm">更多<span class="topraquo">&raquo;</span></a></li>
+			   </ul>
+	</div>
+	
+	<div class="searchbox">
+	
+		<a uigs="backtohome" href="/" class="logo"></a>
+		<div class="search">
+		<form action="/pics" name="searchForm"  onsubmit="if(new RegExp('p=([^&]+)').test(location.search)){document.searchForm.p.value=decodeURIComponent(RegExp.$1);};document.searchForm._ast.value=Math.round(new Date().getTime()/1000);return true;">
+		  <div class="query">
+				<input id="form_querytext" name="query" type="text">
+				<a href="javascript:void(0)" title="按图片搜索" class="stswitcher" id="stswitcher">识图</a>
+				<input type="hidden" name="w" value="05009900">
+	    		<input type="hidden" name="p" id="p" value="">
+	    		<input type="hidden" name="_asf" value="pic.sogou.com">
+	    		<input type="hidden" name="_ast" value="">
+	    		<input type="hidden" name="sc" value="index">
+    	   </div>
+    	   <div class="searchbtn"><input id="searchBtn"  type="submit" value="搜狗搜索"></div>
+		</form>
+		</div>
+	
+	    <div class="st-box" style="margin-left:-235px;left:50%;z-index:2001;display:none;" id="shitubox">
+        <a href="javascript:void(0)" id="closeshitubox" class="close"></a>
+        <div class="st-title">识图
+            <div class="help">
+                <s id="help_icon"></s>
+                    <div class="help-wrap" style="display:none;" id="help_content">
+                        <i></i>
+                        <div class="help-box">
+                        <h4>如何粘贴图片网址：</h4>
+                        <p>1、右键点击网页上的图片，选择“复制图片网址”。</p>
+                        <p>2、在搜索框中粘贴该网址（Ctrl+V），点击“识图搜索”按钮。</p>
+                        </div>
+                    </div>
+            </div>     
+        </div>
+        <div class="st-search"> 
+          <div class="st-input">
+            <div class="st-input-s">
+            <form action="/ris"  id="url_form" method="get">
+              <input name="query" type="text" id="url_form_query" value="请粘贴图片网址">
+              <input name="flag" type="hidden" value="1">
+              <input name="drag" type="hidden" id="url_form_drag"  value="0">
+            </form>
+          </div>
+          </div>
+          <a class="searchbtn2" id="url_form_sbm">识图搜索</a>
+
+        </div>
+        <div class="st-btns" id="no_ie_panel" style="display:none">
+          <div class="area">
+            <em></em>
+            <p class="p-1">将图片拖至此处</p>
+          </div>
+          <div class="upload" id="upload_pic_btn">
+            <em></em>
+            <input type="button" value="本地上传" class="upload-btn" />
+          </div>
+        </div>
+       <div class="st-btns for-ie" id="ie_panel" style="display:none;">
+          <div class="upload" id="upload_pic_btn_ie" style="position:relative">
+            <em></em>
+            <input type="button" value="本地上传" class="upload-btn" />
+            <form action="/ris_upload"  method="post" enctype="multipart/form-data">
+           		<input name="flag" type="hidden" value="1"/><input name="pic_path" type="file" id="upload_pic_file" onchange="uploadfile_change(this)" size="85" style="position:absolute; width:100%; height:100%;font-size:108px;left:0; top:0; filter: alpha(opacity=0);opacity: 0;"/>
+    		</form>
+          </div>
+          <div class="area">
+            <em></em>
+            <p class="p-1">IE浏览器暂不支持图片拖拽功能</p>
+          </div>
+          
+        </div>
+      </div>
+      
+       <div id="dragbox_file" class="st-box" style="margin-left:-235px;left:50%;z-index:2001;display:none;">
+        
+        <div class="st-mask"></div>
+          <div class="drag-box"></div>
+           <div class="area2">
+              <em></em>
+              <p class="p-1">将图片拖至此处</p>
+            </div>
+          <a href="javascript:void(0)" class="close" id="close_drag_file"></a>
+          
+          
+	    <form action="/ris_upload"  method="post" id="upload_pic" enctype="multipart/form-data">
+	           <input name="flag" type="hidden" value="1"><input name="pic_path" type="file" id="upload_pic_file" onchange="uploadfile_change(this)" size="85" style="position:absolute; width:100%; height:100%;font-size:108px;left:0; top:0; filter: alpha(opacity=0);opacity:0;z-index:999">
+	    </form>
+    </div>
+    <div class="st-box" id="dragbox_load" style="margin-left:-235px;left:50%;z-index:2001;display:none;">
+        <a  href="javascript:void(0)" class="close" id="close_dragbox_load"></a>
+         <div class="area2">
+              <em></em>
+              <p class="p-1">正在识别中，请稍后…</p>
+            </div>
+         <img src="" class="st-load"/>
+    </div>
+    <div class="st-box" id="dragbox_common" style="margin-left:-235px;left:50%;z-index:2001;;display:none;" class="st-box st-hover">
+        <div class="st-mask"></div>
+          <div class="drag-box"></div>
+           <div class="area2">
+              <em></em>
+              <p class="p-1">将图片拖至此处</p>
+            </div>
+          <a href="javascript:void(0)" class="close" id="close_dragbox_common"></a>
+    </div>
+    </div>
+	<div class="nav-area">
+		<div class="nav">
+			<ul class="nav-list" style="width:960px; margin:0 auto;display:none;">
+				<li class="cur">
+				<a href="javascript:void(0)" class="nav-tab">首页</a></li>
+		        <li><a href="/pics/news/index.jsp?from=home" class="nav-tab">图说新闻</a></li>
+		        <li><a href="/pics/recommend?category=%C3%C0%C5%AE&from=home" class="nav-tab">美女</a></li>
+		        <li><a href="/pics/recommend?category=%B8%E3%D0%A6&from=home" class="nav-tab">搞笑</a></li>
+		        <li><a href="/pics/recommend?category=%B1%DA%D6%BD&from=home" class="nav-tab">壁纸</a></li>
+		        <li><a href="/pics/recommend?category=%C3%F7%D0%C7&from=home" class="nav-tab">明星</a></li>
+		        <li><a href="/pics/recommend?category=%E5%AE%B6%E5%B1%85&from=home" class="nav-tab">家居</a></li>
+		        <li><a href="/pics/recommend?category=%E6%B1%BD%E8%BD%A6&from=home" class="nav-tab">汽车</a></li>
+		        <li><a href="/pics/recommend?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&from=home" class="nav-tab">艺术云图</a></li>
+		        <li><a href="/pics/recommend?category=LOFTER&from=home" class="nav-tab">LOFTER</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--end header-->
+<div class="content" style="width:960px; margin:0 auto">
+  
+  <div class="row" style="height: 346px;" id="news_content">
+  </div>
+  <div class="row"  id="meinv_content">
+  </div>
+  <div class="row" id="art_content">          
+  </div>
+  <div class="row" id="lofter_content">          
+  </div>
+  <div class="row" id="nice_content">
+  </div>
+   <div class="row"  id="bizhi_content">
+  </div>
+   <div class="row"  id="gaoxiao_content">
+  </div>
+  <div class="row"  id="mingxing_content">
+  </div>
+  
+  
+</div>
+<script type="text/javascript">
+	var uigs_para = {
+		"uigs_productid" : "pic",
+		"pagetype" : "home",
+		"page_version" : "2014",
+		
+			"uuid":'3db31c77-dec9-418f-89b3-997dcced8467',
+		
+		"screen_width" : window.screen.width,
+		"screen_height" : window.screen.height
+		};
+	var SugPara={enableSug:true,sugType:"pic",submitId:"searchBtn",domain:"vs.sugg.sogou.com",postFix:"组图片",inputid:"form_querytext",revsd:1,needIframe:true,suggestRid:"05002100",x_deltaX:-4,x_deltaY:-0,normalRid:"05009900",useParent:1};
+</script>
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript" src="/home/js/home_2015_release.js?rel=137f159baf"></script>
+
+
+<script type="text/javascript">
+
+
+function diaplayAllCategory(displayWidth)
+{
+	CategoryDisplay([{"id":0,"category":null,"onlineTime":null,"title":"组图:SNH48曝水墨中国风写真 庆祝祖国华诞","link":"/pics/news/detail_top.jsp?category=%E5%A8%B1%E4%B9%90&mark=99f6d7b89b4b5248&did=9","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/e74f4f624ad2b4e2c2d390e88fbabac8","tag":null,"width":515,"height":335,"pos":0,"marginLeft":0,"marginTop":-5,"displayWidth":515,"displayHeight":325},{"id":0,"category":null,"onlineTime":null,"title":"西班牙小姐俘获C罗 要见家长两人好事不远?","link":"/pics/news/detail_top.jsp?category=%E4%BD%93%E8%82%B2&mark=64437275f25eb428&did=9","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/42ef75d8ce010635925cad0b022fff3b","tag":null,"width":577,"height":325,"pos":0,"marginLeft":-34,"marginTop":0,"displayWidth":515,"displayHeight":325},{"id":0,"category":null,"onlineTime":null,"title":"台湾性感学生妹晒私照:台风天和我一起打LOL吧","link":"/pics/news/detail_top.jsp?category=%E6%B8%B8%E6%88%8F&mark=609fda908be58028&did=38","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/dbbc5f3e94320b90d986e090c74e498a","tag":null,"width":515,"height":687,"pos":0,"marginLeft":0,"marginTop":-62,"displayWidth":515,"displayHeight":325},{"id":0,"category":null,"onlineTime":null,"title":"组图:吻遍好莱坞!那些年被突袭过的好肉体们","link":"/pics/news/detail_top.jsp?category=%E5%A8%B1%E4%B9%90&mark=59b50cc9bae8ae60&did=66","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520024/3e1a0dcc06ccbcf391caa1ca4569142e","tag":null,"width":515,"height":608,"pos":0,"marginLeft":0,"marginTop":-58,"displayWidth":515,"displayHeight":325},{"id":0,"category":null,"onlineTime":null,"title":"福原爱为爱洗手作羹汤 婚后变身美厨娘","link":"/pics/news/detail_top.jsp?category=%E4%BD%93%E8%82%B2&mark=605e30699d29868b&did=6","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/0718ae2401300ae772c5a3c82bdffc97","tag":null,"width":515,"height":687,"pos":0,"marginLeft":0,"marginTop":-84,"displayWidth":515,"displayHeight":325}],[{"id":0,"category":"综合","onlineTime":null,"title":"丰胸肥臀的妹子们","link":"/pics/recommend?category=%E7%BE%8E%E5%A5%B3&imageid=12657646#%E6%9C%89%E6%B2%9F%E5%BF%85%E7%81%AB","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/e9b7a686292e88016e5d4901dfcc0205","tag":"有沟必火","width":281,"height":342,"pos":0,"marginLeft":-25,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"综合","onlineTime":null,"title":"萌妹子","link":"/pics/recommend?category=%E7%BE%8E%E5%A5%B3&imageid=12841530#%E6%96%87%E8%89%BA","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/17083fb7e259aa356521b79a806aca16","tag":"文艺","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"综合","onlineTime":null,"title":"韩国高雅美女图片写真合集一","link":"/pics/recommend?category=%E7%BE%8E%E5%A5%B3&imageid=12637826#%E9%9F%A9%E6%B5%81","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/e7617b4b857b3b7a7c4590844a9b413d","tag":"韩流","width":236,"height":393,"pos":0,"marginLeft":0,"marginTop":-15,"displayWidth":236,"displayHeight":342},{"id":0,"category":"综合","onlineTime":null,"title":"粉红女神武萧香车美人","link":"/pics/recommend?category=%E7%BE%8E%E5%A5%B3&imageid=3974245#%E7%B2%89%E7%BA%A2%E8%8F%87%E5%87%89","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520020/cc32124768fa51d3c54b4260c7a5a58b","tag":"粉红菇凉","width":261,"height":342,"pos":0,"marginLeft":-12,"marginTop":0,"displayWidth":236,"displayHeight":342}],"news_content",displayWidth,"综合",[{"word":"萌宠","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E8%90%8C%E5%AE%A0&fr=0005-003r"},{"word":"诱惑","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E6%80%A7%E6%84%9F&fr=0005-003r "},{"word":"动态图","encodedWord":null,"link":"http://haha.sogou.com/tag/li/%E5%8A%A8%E6%80%81%E5%9B%BE/hot/?fr=0005-003r "},{"word":"无法直视","encodedWord":null,"link":"http://haha.sogou.com/tag/li/%E9%82%AA%E6%81%B6/new/?fr=0005-003r "},{"word":"大写的污","encodedWord":null,"link":"http://haha.sogou.com/video/hot/?fr=0005-003r "},{"word":"恶搞","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E6%81%B6%E6%90%9E&fr=0005-003r "},{"word":"汽车","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E6%B1%BD%E8%BD%A6&fr=0005-003r"},{"word":"囧图","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E5%9B%A7%E5%9B%BE&fr=0005-003r "},{"word":"萌萌哒","encodedWord":null,"link":"http://haha.sogou.com/tag/li/%E8%90%8C/?fr=0005-003r "},{"word":"动漫图片","encodedWord":null,"link":"http://haha.sogou.com/tag/li/%E5%8A%A8%E6%BC%AB/?fr=0005-003r"},{"word":"性感美女","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E7%BE%8E%E5%A5%B3%E5%9B%BE%E7%89%87&fr=0005-003r"},{"word":"小清新","encodedWord":null,"link":"http://haha.sogou.com/search/li/?key=%E5%B0%8F%E6%B8%85%E6%96%B0&fr=0005-003r"}]);
+	CategoryDisplay([{"id":0,"category":"美女","onlineTime":null,"title":"八宝女仆装扮让人兴奋-换日线它在哪","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E5%A5%B3%E4%BB%86%E8%A3%85#0%269000034","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/2a4d55893049f88472a0e93a290e57ae","tag":"女仆装","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":-9,"displayWidth":236,"displayHeight":342},{"id":0,"category":"美女","onlineTime":null,"title":"小清新清纯美女","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E6%91%84%E5%BD%B1#0%2612791881","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520024/24d7a77b0170d5ff7a73db10f62cd66b","tag":"摄影","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"美女","onlineTime":null,"title":"秋日时尚妹子","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E6%96%87%E8%89%BA#0%2612795860","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520024/3b72da8c104d75010c931bd5f19e579c","tag":"文艺","width":236,"height":352,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"美女","onlineTime":null,"title":"甜美校花宁静唯美写真","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E5%94%AF%E7%BE%8E#0%2611516026","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/a41a77fa896152035b5243d4c25816f8","tag":"唯美","width":236,"height":351,"pos":0,"marginLeft":0,"marginTop":-7,"displayWidth":236,"displayHeight":342},{"id":0,"category":"美女","onlineTime":null,"title":"阳光下的学生妹清纯街拍","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E5%AD%A6%E7%94%9F%E5%A6%B9#0%2611417112","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/77d00a6c53ce6215154f84d77456d508","tag":"学生妹","width":236,"height":351,"pos":0,"marginLeft":0,"marginTop":-7,"displayWidth":236,"displayHeight":342},{"id":0,"category":"美女","onlineTime":null,"title":"丰胸肥臀的妹子们","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E6%9C%89%E6%B2%9F%E5%BF%85%E7%81%AB#0%2612657653","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/da3ebdd08a1c163c96adf57f517e967d","tag":"有沟必火","width":236,"height":345,"pos":0,"marginLeft":0,"marginTop":-1,"displayWidth":236,"displayHeight":342},{"id":0,"category":"美女","onlineTime":null,"title":"韩国美女美丽动人","link":"/pics/recompic/detail.jsp?category=%E7%BE%8E%E5%A5%B3&tag=%E9%A3%8E%E6%83%85#0%2612636987","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520024/4ab956da232eae4032e97a1b0556f34d","tag":"风情","width":262,"height":342,"pos":0,"marginLeft":-14,"marginTop":0,"displayWidth":236,"displayHeight":342}],[{"tag":"女仆装","link":"/pics/recommend?category=%C3%C0%C5%AE#%E5%A5%B3%E4%BB%86%E8%A3%85","pos":0},{"tag":"素人","link":"/pics/recommend?category=%C3%C0%C5%AE#%E7%B4%A0%E4%BA%BA","pos":0},{"tag":"可爱","link":"/pics/recommend?category=%C3%C0%C5%AE#%E5%8F%AF%E7%88%B1","pos":0},{"tag":"萝莉","link":"/pics/recommend?category=%C3%C0%C5%AE#%E8%90%9D%E8%8E%89","pos":0},{"tag":"公主范","link":"/pics/recommend?category=%C3%C0%C5%AE#%E5%85%AC%E4%B8%BB%E8%8C%83","pos":0},{"tag":"美臀控","link":"/pics/recommend?category=%C3%C0%C5%AE#%E7%BE%8E%E8%87%80%E6%8E%A7","pos":0},{"tag":"明星写真","link":"/pics/recommend?category=%C3%C0%C5%AE#%E6%98%8E%E6%98%9F%E5%86%99%E7%9C%9F","pos":0},{"tag":"优雅","link":"/pics/recommend?category=%C3%C0%C5%AE#%E4%BC%98%E9%9B%85","pos":0},{"tag":"自拍照","link":"/pics/recommend?category=%C3%C0%C5%AE#%E8%87%AA%E6%8B%8D%E7%85%A7","pos":0}],"meinv_content",displayWidth,"美女");
+	CategoryDisplay([{"id":0,"category":"艺术云图","onlineTime":null,"title":"梵高-有乌鸦的麦田","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E6%A2%B5%E9%AB%98#0%2612681820","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520020/09a83f7e7d84c2bb58556bd6d8f724c9","tag":"梵高","width":705,"height":342,"pos":0,"marginLeft":-176,"marginTop":0,"displayWidth":484,"displayHeight":342},{"id":0,"category":"艺术云图","onlineTime":null,"title":"莫奈-Springtime","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E8%8E%AB%E5%A5%88#0%2612682356","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/37b8e3d0fa14cdf897be2c8c3e3bd8b1","tag":"莫奈","width":236,"height":181,"pos":0,"marginLeft":0,"marginTop":-13,"displayWidth":236,"displayHeight":165},{"id":0,"category":"艺术云图","onlineTime":null,"title":"卢西安·弗洛伊德-Girl in a White Dress (1947) by Lucian Freud","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E8%8B%B1%E5%9B%BD#0%2612681507","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/01f8c5542aa80ced5e1226e57b32339c","tag":"英国","width":236,"height":293,"pos":0,"marginLeft":0,"marginTop":-45,"displayWidth":236,"displayHeight":165},{"id":0,"category":"艺术云图","onlineTime":null,"title":"毕沙罗-Peasant Women Planting Stakes","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E5%9C%A3%E6%89%98%E9%A9%AC%E6%96%AF%E5%B2%9B#0%2612681481","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520024/0fabb60bfa4cbfe5e9a00645760ce808","tag":"圣托马斯岛","width":282,"height":342,"pos":0,"marginLeft":-27,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"艺术云图","onlineTime":null,"title":"蒙德里安-Night - the red tree, 1908-1910","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E8%92%99%E5%BE%B7#0%2612682197","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/67b7739d25382dc7a7a2ad16c31f0b5b","tag":"蒙德","width":236,"height":168,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"艺术云图","onlineTime":null,"title":"马蒂斯-舞蹈（II）","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E9%87%8E%E5%85%BD%E6%B4%BE%E5%88%9B%E5%A7%8B%E4%BA%BA#0%2612682092","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/893ed7b5439a3e140d328ac475e25e2e","tag":"野兽派创始人","width":244,"height":165,"pos":0,"marginLeft":-3,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"艺术云图","onlineTime":null,"title":"约瑟夫·博伊斯-Evervess II 1","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=%E5%90%8E%E7%8E%B0%E4%BB%A3%E4%B8%BB%E4%B9%89#0%2612680961","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/ac08a306acc37d73bc614b2afe61344c","tag":"后现代主义","width":250,"height":342,"pos":0,"marginLeft":-5,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"艺术云图","onlineTime":null,"title":"莫奈-Spring Landscape","link":"/pics/recompic/detail.jsp?category=%E8%89%BA%E6%9C%AF%E4%BA%91%E5%9B%BE&tag=landscape#0%2612682341","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/5a9a8d6de583c1e038f450ff50ab5d8e","tag":"landscape","width":266,"height":342,"pos":0,"marginLeft":-7,"marginTop":0,"displayWidth":236,"displayHeight":342}],[{"tag":"莫奈","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E8%8E%AB%E5%A5%88","pos":0},{"tag":"梵高","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E6%A2%B5%E9%AB%98","pos":0},{"tag":"毕加索","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E6%AF%95%E5%8A%A0%E7%B4%A2","pos":0},{"tag":"行为艺术","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E8%A1%8C%E4%B8%BA%E8%89%BA%E6%9C%AF","pos":0},{"tag":"现代绘画","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E7%8E%B0%E4%BB%A3%E7%BB%98%E7%94%BB","pos":0},{"tag":"现实主义","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E7%8E%B0%E5%AE%9E%E4%B8%BB%E4%B9%89","pos":0},{"tag":"绿色","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E7%BB%BF%E8%89%B2","pos":0},{"tag":"油画","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E6%B2%B9%E7%94%BB","pos":0},{"tag":"点彩画","link":"/pics/recommend?category=%D2%D5%CA%F5%D4%C6%CD%BC#%E7%82%B9%E5%BD%A9%E7%94%BB","pos":0}],"art_content",displayWidth,"艺术云图");
+	CategoryDisplay([{"id":0,"category":"LOFTER","onlineTime":null,"title":"邂逅一只流浪猫","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E9%82%82%E9%80%85%E4%B8%80%E5%8F%AA%E6%B5%81%E6%B5%AA%E7%8C%AB#0%2612799206","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/3566491ed0f9cf8ebce99354c43aa7fb","tag":"邂逅一只流浪猫","width":247,"height":165,"pos":0,"marginLeft":-3,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"LOFTER","onlineTime":null,"title":"美妆之口红试色","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E7%BE%8E%E5%A6%86#0%2612798679","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/ca4444244c1f53b0140153d7661fa0ce","tag":"美妆","width":331,"height":165,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"LOFTER","onlineTime":null,"title":"文艺女神","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E5%A5%B3%E7%A5%9E#0%2612798723","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520024/4a877d9e3dce71d2b126f97c994e9a45","tag":"女神","width":236,"height":348,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"LOFTER","onlineTime":null,"title":"每日元气早餐","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E6%AF%8F%E6%97%A5%E5%85%83%E6%B0%94%E6%97%A9%E9%A4%90#0%2612799051","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/e7ccaa6707fcb6a7c1bf6b432811548f","tag":"每日元气早餐","width":236,"height":315,"pos":0,"marginLeft":0,"marginTop":-60,"displayWidth":236,"displayHeight":165},{"id":0,"category":"LOFTER","onlineTime":null,"title":"小清新","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E6%B8%85%E6%96%B0#0%2612798147","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/15ae1c202663fd897085e1e8c52b8ce8","tag":"清新","width":236,"height":177,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"LOFTER","onlineTime":null,"title":"风景","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E5%8A%A8%E7%89%A9#0%2612799143","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/15c6455db3556c3f4c170037cfb274f6","tag":"动物","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":-1,"displayWidth":236,"displayHeight":342},{"id":0,"category":"LOFTER","onlineTime":null,"title":"日系妹子","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=%E6%97%A5%E7%B3%BB#0%2612798580","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/202a27d217f8f12be2a817128949f875","tag":"日系","width":236,"height":355,"pos":0,"marginLeft":0,"marginTop":-5,"displayWidth":236,"displayHeight":342},{"id":0,"category":"LOFTER","onlineTime":null,"title":"文艺少女","link":"/pics/recompic/detail.jsp?category=LOFTER&tag=lofter%E5%B0%91%E5%A5%B3#0%2612798179","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/c10a7a128c5e29cbf685fdb4a8ddf6cd","tag":"lofter少女","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":342}],[{"tag":"最文艺","link":"/pics/recommend?category=LOFTER#%E6%9C%80%E6%96%87%E8%89%BA","pos":0},{"tag":"拍私房","link":"/pics/recommend?category=LOFTER#%E6%8B%8D%E7%A7%81%E6%88%BF","pos":0},{"tag":"女神","link":"/pics/recommend?category=LOFTER#%E5%A5%B3%E7%A5%9E","pos":0},{"tag":"搭配","link":"/pics/recommend?category=LOFTER#%E6%90%AD%E9%85%8D","pos":0},{"tag":"读城记","link":"/pics/recommend?category=LOFTER#%E8%AF%BB%E5%9F%8E%E8%AE%B0","pos":0},{"tag":"遇见世界","link":"/pics/recommend?category=LOFTER#%E9%81%87%E8%A7%81%E4%B8%96%E7%95%8C","pos":0},{"tag":"美妆","link":"/pics/recommend?category=LOFTER#%E7%BE%8E%E5%A6%86","pos":0},{"tag":"元气早餐","link":"/pics/recommend?category=LOFTER#%E5%85%83%E6%B0%94%E6%97%A9%E9%A4%90","pos":0},{"tag":"萌宠","link":"/pics/recommend?category=LOFTER#%E8%90%8C%E5%AE%A0","pos":0}],"lofter_content",displayWidth,"LOFTER");
+	CategoryDisplay([{"id":0,"category":"搞笑","onlineTime":null,"title":"媳妇儿送我的全身水洗剃须刀，怎么好像觉得哪里不对劲。","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=%E9%94%99%E8%A7%89#0%26503248","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520020/78cadba2c00705b5276a6b016720508e","tag":"错觉","width":318,"height":342,"pos":0,"marginLeft":-13,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"搞笑","onlineTime":null,"title":"这种卫生纸你会用吗?","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=%E9%94%99%E8%A7%89#0%26500575","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/c2fdef98c1c1645fff317bbec1c33790","tag":"错觉","width":236,"height":179,"pos":0,"marginLeft":0,"marginTop":-11,"displayWidth":236,"displayHeight":165},{"id":0,"category":"搞笑","onlineTime":null,"title":"害物终害己！","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=2b%E9%9D%92%E5%B9%B4#0%26655891","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/abfd87adfb8b38fa2907d189bcf6c392","tag":"2b青年","width":248,"height":165,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"搞笑","onlineTime":null,"title":"我真的不要洗澡嘛简介：求求你放开我吧...","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=%E9%9B%85%E8%A0%9B%E8%9D%B6#0%26500821","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/68a5634cd34f8c74c19b3873031ecf0b","tag":"雅蠛蝶","width":286,"height":342,"pos":0,"marginLeft":-32,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"搞笑","onlineTime":null,"title":"朋友买了辆跑车，太尼玛帅了","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=%E5%B0%BC%E7%8E%9B#0%26477322","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/1ec15aeca26f28784d0a92d9d348bb4f","tag":"尼玛","width":247,"height":342,"pos":0,"marginLeft":-6,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"搞笑","onlineTime":null,"title":"汪星人的表情亮了！","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=%E6%B1%AA%E6%98%9F%E4%BA%BA#0%26501916","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/e3f062cbe7f0713a42ae7277a7823599","tag":"汪星人","width":276,"height":342,"pos":0,"marginLeft":-23,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"搞笑","onlineTime":null,"title":"总算被咱搞定了","link":"/pics/recompic/detail.jsp?category=%E6%90%9E%E7%AC%91&tag=%E7%86%8A%E5%AD%A9%E5%AD%90#0%26480757","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/3ba24f17de6be2ebc9224bf187b0cf87","tag":"熊孩子","width":289,"height":342,"pos":0,"marginLeft":-22,"marginTop":0,"displayWidth":236,"displayHeight":342}],[{"tag":"动态图","link":"http://haha.sogou.com/tag/li/%E5%8A%A8%E6%80%81%E5%9B%BE/?fr=0005-003r","pos":0},{"tag":"没节操","link":"http://haha.sogou.com/image/?fr=0005-003r ","pos":0},{"tag":"内涵图","link":"http://haha.sogou.com/search/li/?key=%E5%86%85%E6%B6%B5&fr=0005-003r ","pos":0},{"tag":"暴走漫画","link":"http://haha.sogou.com/search/li/?key=%E6%9A%B4%E8%B5%B0&fr=0005-003r ","pos":0},{"tag":"恶搞","link":"http://haha.sogou.com/tag/li/%E6%81%B6%E6%90%9E/hot/","pos":0},{"tag":"喵星人","link":"http://haha.sogou.com/search/li/?key=%E5%96%B5%E6%98%9F%E4%BA%BA&fr=0005-003r ","pos":0},{"tag":"悲剧","link":"http://haha.sogou.com/tag/li/%E6%82%B2%E5%89%A7/?fr=0005-003r","pos":0},{"tag":"邪恶","link":"http://haha.sogou.com/tag/li/%E9%82%AA%E6%81%B6/?fr=0005-003r","pos":0},{"tag":"第一次","link":"http://haha.sogou.com/search/li/?key=%E7%AC%AC%E4%B8%80%E6%AC%A1&fr=0005-003r ","pos":0}],"gaoxiao_content",displayWidth,"搞笑");
+	CategoryDisplay([{"id":0,"category":"壁纸","onlineTime":null,"title":"伦敦大桥","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E4%B8%96%E7%95%8C%E9%A3%8E%E5%85%89#0%2611901643","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520020/39e36430fb9b717e3378ab7ac9533d8b","tag":"世界风光","width":547,"height":342,"pos":0,"marginLeft":-61,"marginTop":0,"displayWidth":484,"displayHeight":342},{"id":0,"category":"壁纸","onlineTime":null,"title":"花海","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E4%B8%96%E7%95%8C%E9%A3%8E%E5%85%89#0%2611901642","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/586e1d9b89e5d9dcfde9b1e6c3ffedbd","tag":"世界风光","width":264,"height":165,"pos":0,"marginLeft":-24,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":"宽屏彩色美丽植物","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E5%94%AF%E7%BE%8E#0%2611687650","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/9550054edd8f65d37eb9ddbc2fcc068a","tag":"唯美","width":264,"height":165,"pos":0,"marginLeft":-4,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":"明星美女","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E7%BE%8E%E5%A5%B3#0%267389376","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/5ed7ebe172c34db34ba980181aad8a58","tag":"美女","width":236,"height":177,"pos":0,"marginLeft":0,"marginTop":-10,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":" 唯美暖色系壁纸 ","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E4%BC%98%E8%B4%A8#0%26771451","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/56f7ea5f7f090a083fead80804cfb523","tag":"优质","width":236,"height":177,"pos":0,"marginLeft":0,"marginTop":-10,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":"猫咪","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E8%90%8C%E8%B4%A7%E5%A4%A7%E9%9B%86%E5%90%88#0%269670321","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/c2cac0175f767128636b5967e894ec2c","tag":"萌货大集合","width":293,"height":165,"pos":0,"marginLeft":-26,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":"城里来了一条龙壁纸","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E6%89%8B%E7%BB%98#0%2611261676","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/0cf6a999e9e9b59248550a9266026a07","tag":"手绘","width":264,"height":165,"pos":0,"marginLeft":-22,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":" 《加速世界》女主黑雪姬桌面壁纸 ","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E5%8A%A8%E6%BC%AB#0%26800305","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/58243d75cec7d861b03fcce5694db26e","tag":"动漫","width":264,"height":165,"pos":0,"marginLeft":-12,"marginTop":0,"displayWidth":236,"displayHeight":165},{"id":0,"category":"壁纸","onlineTime":null,"title":"心","link":"/pics/recompic/detail.jsp?category=%E5%A3%81%E7%BA%B8&tag=%E5%88%9B%E6%84%8F#0%2611510701","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/c01906b04c6a6d7ad83dec81fa13f4f8","tag":"创意","width":275,"height":165,"pos":0,"marginLeft":-25,"marginTop":0,"displayWidth":236,"displayHeight":165}],[{"tag":"世界风光","link":"/pics/recommend?category=%B1%DA%D6%BD#%E4%B8%96%E7%95%8C%E9%A3%8E%E5%85%89","pos":0},{"tag":"美女","link":"/pics/recommend?category=%B1%DA%D6%BD#%E7%BE%8E%E5%A5%B3","pos":0},{"tag":"炫彩","link":"/pics/recommend?category=%B1%DA%D6%BD#%E7%82%AB%E5%BD%A9","pos":0},{"tag":"萌宠","link":"/pics/recommend?category=%B1%DA%D6%BD#%E8%90%8C%E5%AE%A0","pos":0},{"tag":"高清","link":"/pics/recommend?category=%B1%DA%D6%BD#%E9%AB%98%E6%B8%85","pos":0},{"tag":"可爱","link":"/pics/recommend?category=%B1%DA%D6%BD#%E5%8F%AF%E7%88%B1","pos":0},{"tag":"唯美","link":"/pics/recommend?category=%B1%DA%D6%BD#%E5%94%AF%E7%BE%8E","pos":0},{"tag":"清新","link":"/pics/recommend?category=%B1%DA%D6%BD#%E6%B8%85%E6%96%B0","pos":0},{"tag":"优质","link":"/pics/recommend?category=%B1%DA%D6%BD#%E4%BC%98%E8%B4%A8","pos":0}],"bizhi_content",displayWidth,"壁纸");
+	CategoryDisplay([{"id":0,"category":"明星","onlineTime":null,"title":"同是80后 赵丽颖baby谁更年轻","link":"/pics/recommend?category=明星#%E8%B5%B5%E4%B8%BD%E9%A2%96","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/15c38a33f30485e09e2eec201cda2bfb","tag":"赵丽颖","width":257,"height":342,"pos":0,"marginLeft":-12,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"明星","onlineTime":null,"title":"杨颖 来自爪子y的图片分享 堆糖","link":"/pics/recommend?category=明星#%E6%9D%A8%E9%A2%96","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/9011891441b4c38d7b19785a78f731ba","tag":"杨颖","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":-10,"displayWidth":236,"displayHeight":342},{"id":0,"category":"明星","onlineTime":null,"title":"杨洋自曝择偶标准 称会把女友宠上天 组图","link":"/pics/recommend?category=明星#%E6%9D%A8%E6%B4%8B","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/3a6f1e27c28e9524dd18162d588d76f9","tag":"杨洋","width":287,"height":342,"pos":0,"marginLeft":-10,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"明星","onlineTime":null,"title":"范冰冰-经典黑长直才是男神收割机","link":"/pics/recommend?category=明星#%E8%8C%83%E5%86%B0%E5%86%B0","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/9c7f29b81490f732bd077f0885674811","tag":"范冰冰","width":253,"height":342,"pos":0,"marginLeft":-8,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"明星","onlineTime":null,"title":"TFBOYS新曲 小精灵 妙趣上线 吴青峰倾情打造","link":"/pics/recommend?category=明星#tfboys","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520024/b6df483b6f48ac4461a67ee14becec6a","tag":"tfboys","width":236,"height":354,"pos":0,"marginLeft":0,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"明星","onlineTime":null,"title":"郑爽 堆糖,美好生活研究所","link":"/pics/recommend?category=明星#%E9%83%91%E7%88%BD","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/a22b863a3a24adff36f9d145dd56f66e","tag":"郑爽","width":236,"height":374,"pos":0,"marginLeft":0,"marginTop":-13,"displayWidth":236,"displayHeight":342},{"id":0,"category":"明星","onlineTime":null,"title":"30张美胸图证明杨幂的胸确有39D 邓超没说错 组图","link":"/pics/recommend?category=明星#%E6%9D%A8%E5%B9%82","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520024/b7f0a78b706edfdb5436d1bd57bc683c","tag":"杨幂","width":259,"height":342,"pos":0,"marginLeft":-4,"marginTop":0,"displayWidth":236,"displayHeight":342}],[{"tag":"吴亦凡","link":"/pics/recommend?category=%C3%F7%D0%C7#%E5%90%B4%E4%BA%A6%E5%87%A1","pos":0},{"tag":"权志龙","link":"/pics/recommend?category=%C3%F7%D0%C7#%E6%9D%83%E5%BF%97%E9%BE%99","pos":0},{"tag":"exo","link":"/pics/recommend?category=%C3%F7%D0%C7#exo","pos":0},{"tag":"bigbang","link":"/pics/recommend?category=%C3%F7%D0%C7#bigbang","pos":0},{"tag":"古力娜扎","link":"/pics/recommend?category=%C3%F7%D0%C7#%E5%8F%A4%E5%8A%9B%E5%A8%9C%E6%89%8E","pos":0},{"tag":"迪丽热巴","link":"/pics/recommend?category=%C3%F7%D0%C7#%E8%BF%AA%E4%B8%BD%E7%83%AD%E5%B7%B4","pos":0},{"tag":"林允儿","link":"/pics/recommend?category=%C3%F7%D0%C7#%E6%9E%97%E5%85%81%E5%84%BF","pos":0},{"tag":"宋仲基","link":"/pics/recommend?category=%C3%F7%D0%C7#%E5%AE%8B%E4%BB%B2%E5%9F%BA","pos":0},{"tag":"水原希子","link":"/pics/recommend?category=%C3%F7%D0%C7#%E6%B0%B4%E5%8E%9F%E5%B8%8C%E5%AD%90","pos":0}],"mingxing_content",displayWidth,"明星");
+	CategoryDisplay([{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"萌妹","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=live%E7%94%9F%E6%B4%BB#0%2612640401","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520020/3dc47315eeaee5b7d2675e1fe5298c2e","tag":"live生活","width":236,"height":236,"pos":0,"marginLeft":0,"marginTop":-36,"displayWidth":236,"displayHeight":165},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"长腿妹子","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=%E9%BB%91%E7%99%BD%E7%B3%BB#0%2612643114","detailLink":null,"image":"http://img04.sogoucdn.com/app/a/100520024/4492a1d58671a535dfa8f2dded5b75e8","tag":"黑白系","width":236,"height":236,"pos":0,"marginLeft":0,"marginTop":-41,"displayWidth":236,"displayHeight":165},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"街拍范","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=zara#0%2612754125","detailLink":null,"image":"http://img03.sogoucdn.com/app/a/100520020/4632fa522b8dedbd0836bccb7990748c","tag":"zara","width":342,"height":342,"pos":0,"marginLeft":-26,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"活力少女","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=%E4%BB%8A%E6%97%A5%E5%87%BA%E8%A1%97#0%2612698262","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520020/aca16d039a0f3f4c3b62d49204ce9bed","tag":"今日出街","width":342,"height":342,"pos":0,"marginLeft":-104,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"total look\t","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=total%20look#0%2612700012","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520020/4010d608d0827c7c2d06e91dd2bf5018","tag":"total look","width":342,"height":342,"pos":0,"marginLeft":-104,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"uniqlo","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=uniqlo#0%2612755209","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520020/43cbd772e1c61f7dd7de8ba55804b7a0","tag":"uniqlo","width":342,"height":342,"pos":0,"marginLeft":-53,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"格子衫","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=%E7%88%B1%E6%90%AD%E9%85%8D#0%2612640773","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520020/238ea8fa4b595846b91622bb6c3abd53","tag":"爱搭配","width":342,"height":342,"pos":0,"marginLeft":-53,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"气质照","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=chanel#0%2612698810","detailLink":null,"image":"http://img01.sogoucdn.com/app/a/100520020/48af499c6b143fd80d8c7abcd52c615b","tag":"chanel","width":342,"height":342,"pos":0,"marginLeft":-34,"marginTop":0,"displayWidth":236,"displayHeight":342},{"id":0,"category":"好赞·搭配","onlineTime":null,"title":"运动潮范","link":"/pics/recompic/detail.jsp?category=%E5%A5%BD%E8%B5%9E%C2%B7%E6%90%AD%E9%85%8D&tag=nike#0%2612754106","detailLink":null,"image":"http://img02.sogoucdn.com/app/a/100520020/9f60f27b2767f839f53ffc5df25584b6","tag":"nike","width":342,"height":342,"pos":0,"marginLeft":-78,"marginTop":0,"displayWidth":236,"displayHeight":342}],[{"tag":"黑白系","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#%E9%BB%91%E7%99%BD%E7%B3%BB","pos":0},{"tag":"手机摄影","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1","pos":0},{"tag":"h&m","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#h%26m","pos":0},{"tag":"live生活","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#live%E7%94%9F%E6%B4%BB","pos":0},{"tag":"爱搭配","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#%E7%88%B1%E6%90%AD%E9%85%8D","pos":0},{"tag":"红唇控","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#%E7%BA%A2%E5%94%87%E6%8E%A7","pos":0},{"tag":"短发控","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#%E7%9F%AD%E5%8F%91%E6%8E%A7","pos":0},{"tag":"今日出街","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#%E4%BB%8A%E6%97%A5%E5%87%BA%E8%A1%97","pos":0},{"tag":"nike","link":"/pics/recommend?category=%BA%C3%D4%DE%A1%A4%B4%EE%C5%E4#nike","pos":0}],"nice_content",displayWidth,"好赞");
+	lazyLoadImage();
+}
+
+var displayWidth = 0;
+$(document).ready(function(){
+	var totalWidth = $.utils.getViewWidth();
+	
+	displayWidth = SetHomeWidth(totalWidth);
+	$("#top_ad").css("margin-left",(0-(1920-displayWidth)/2)+"px");
+	$("#gouwu_image").css("margin-left",(0-(1920-displayWidth)/2)+"px");
+	diaplayAllCategory(displayWidth);
+
+	$(window).bind("resize",function(){
+		var totalWidth = $.utils.getViewWidth();
+		var newDisplayWidth = SetHomeWidth(totalWidth);
+		if(newDisplayWidth != displayWidth)
+		{
+			displayWidth = newDisplayWidth;
+			$("#top_ad").css("margin-left",(0-(1920-displayWidth)/2)+"px");
+			$("#gouwu_image").css("margin-left",(0-(1920-displayWidth)/2)+"px");
+			diaplayAllCategory(displayWidth);
+		}
+	});
+
+	$(window).bind("scroll",function(){
+		lazyLoadImage();
+	});
+
+	try{
+		(new DragStrategy()).init();
+	}catch(e)
+	{}
+	if($.browser.webkit)
+	{
+		$("#form_querytext").addClass("default");
+		$("#form_querytext").val("截图后，Ctrl+V 到输入框");
+		$("body").on("focus","#form_querytext",function(){
+			if($(this).hasClass("default"))
+			{
+				$(this).removeClass("default");
+				$(this).val("");
+			}
+				
+		}).on("blur","#form_querytext",function(){
+			if(!$(this).hasClass("default"))
+			{
+				if($(this).val() === "")
+				{
+					$(this).addClass("default");
+					$(this).val("截图后，Ctrl+V 到输入框");
+				}
+			}
+		});
+	}
+
+	
+});
+
+</script>
+<div class="footer">
+    <div class="link">
+      <a href="http://fuwu.sogou.com/" target="_blank">企业推广</a>
+      <a href="http://pinyin.sogou.com/" target="_blank">输入法</a>
+      <a href="http://ie.sogou.com/" target="_blank">浏览器</a>
+      <a href="http://job.sogou.com" target="_blank">诚聘英才</a>
+      <a  href="http://www.sogou.com/docs/terms.htm" target="_blank">免责声明</a>
+      <a href="http://e.weibo.com/sogou" target="_blank">官方微博</a>
+      <a href="http://help.sogou.com/picture.html?v=1" target="_blank">帮助</a>
+    </div>
+    <p>&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> SOGOU - 京ICP证050897号</p>
+  </div>
+
+
+
+<script>
+    (function (G,D,s,c,p) {
+        c={
+            UA:"UA-sogou-000005",
+            NO_FLS:1,
+            WITH_REF:1,
+            URL:'http://dl.web.sogoucdn.com/common/lib/iwt-min.js'
+        };
+        G._iwt?G._iwt.track(c,p):(G._iwtTQ=G._iwtTQ || []).push([c,p]),!G._iwtLoading && lo();
+        function lo(t) {
+            G._iwtLoading=1;s=D.createElement("script");s.src=c.URL;
+            t=D.getElementsByTagName("script");t=t[t.length-1];
+            t.parentNode.insertBefore(s,t);
+        }
+    })(this,document);
+</script>
+<!--uuid:3db31c77-dec9-418f-89b3-997dcced8467-->
+
+</body>
+</html>
+<!--zly-->
