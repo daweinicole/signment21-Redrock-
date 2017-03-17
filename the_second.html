@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="the_second.CSS">
+	<title>第一次作业</title>
+</head>
+<body>
+<div class="container">
+	<div class="one">
+		<h1>MUNDUS</h1>
+		<ul>
+			<li>Follow us on</li>
+			<li><a href="">Facebook</a></li>
+			<li>,</li>
+			<li><a href="">Twiter</a></li>
+			<li>and</li>
+			<li><a href="">Flickr</a></li>
+		</ul>
+	</div>
+	<div class="two">
+		<ul class="first">
+			<ul class="two_one"><a href="">HOME</a></ul>
+			<ul><a href="">PORTFOLIO</a></ul>
+			<ul><a href="">FULL WIDTH</a></ul>
+			<ul><a href="">ARCHIVES</a></ul>
+			<ul class="daohang"><a href="">DROPS</a>
+				<li class="li"><a href="">Lorem Ipsum</a></li>
+				<li class="li"><a href="">Consectetur Adipisicing</a></li>
+				<li class="li"><a href="">Eiusmod Tempor</a></li>
+				<li class="li"><a href="">Duis Aute</a></li>
+				<li class="li"><a href="">Reprehenderit</a></li>
+				<li class="li"><a href="">Voluptate Velit</a></li>
+			</ul>
+			<div class="first1">
+			<ul><a href="">BLOG</a></ul>
+			<ul><a href="">CONTACT</a></ul>
+			<ul class="input"><input type="text" name=""></ul>
+			<ul class="select"><img src="./images/sousuosousuo.png"></ul></div>
+		</ul>
+	</div>
+	<div id="content"> <!-- 总的父容器 -->
+		<div class="carousel-inner"> <!-- 包含图片的容器 -->
+		<div class="item "><img src="./images/mei.jpg" alt="第一张图片"></div>
+			<div class="item"><img src="./images/taylor4.jpg" alt="第二张图片"></div>
+			<div class="item"><img src="./images/mei4.jpg" alt="第三张图片"></div>
+		</div>
+		<!-- 图片下方的指示圆圈-->
+		<ul class="carousel-indicators">
+			<li id='pic1'>●</li>
+			<li id='pic2'>●</li>
+			<li id='pic3'>●</li>
+		</ul>
+		<!-- 图片左右方来回滚动图片的左右箭头-->
+		<a href="#" class="carousel-control prev"><span><</span></a>
+		<a href="#" class="carousel-control next"><span>></span></a>
+	</div>
+	<script type="text/javascript">
+		window.onload = function(){
+//轮播初始化
+var lunbo = document.getElementById('content');
+var imgs = lunbo.getElementsByTagName('img'); 
+var uls = lunbo.getElementsByTagName('ul');
+var lis = lunbo.getElementsByTagName('li');
+//初始状态下，一个圆圈为高亮模式
+lis[0].style.fontSize = '26px';
+lis[0].style.color = '#fff';
+//定义一个全局变量，用来进行自动轮播图片顺序的变化
+var pic_index = 1;
+//自动轮播.使用pic_time记录播放，可以随时使用clearInterval()清除掉。
+var pic_time = setInterval(autobofang,3000);
+//手动轮播
+for(var i=0;i<lis.length;i++){ 
+	lis[i].addEventListener("mouseover",change,false);
+}
+function change(event){ 
+	var event=event||window.event;
+	var target=event.target||event.srcElement; 
+	var children = target.parentNode.children; 
+	for(var i=0;i<children.length;i++){
+		if(target == children[i]){ 
+			picChange(i); 
+		} 
+	}
+} 
+//图片切换函数
+function picChange(i){ 
+//让所有图片都不显示，所有圆圈都为普通样式 
+for(var j=0;j<imgs.length;j++){
+	imgs[j].style.display = 'none'; lis[j].style.fontSize = '24px';
+	lis[j].style.color = '#999';
+}
+//让选中的索引的图片显示，对应的圆圈高亮 
+imgs[i].style.display = 'block'; 
+lis[i].style.fontSize = '26px';
+lis[i].style.color = '#fff'; 
+}
+//自动播放的事件处理
+function autobofang(){
+	if(pic_index >= lis.length){
+		pic_index = 0;
+	}
+	change1(pic_index);
+	pic_index++;
+}
+//自动播放的图片转化中的事件
+function change1(index){ 
+	picChange(index);
+//鼠标移入ul标签，自动播放图片暂停
+uls[0].addEventListener("mouseover",pause,false);
+//鼠标移出ul标签，自动播放图片继续
+uls[0].addEventListener("mouseout",go,false);
+}
+//自动播放暂停函数
+function pause(event){
+	var event=event||window.event;
+	var target=event.target||event.srcElement;
+	switch(target.id){
+		case "pic1":
+		clearInterval(pic_time); 
+		break;
+		case "pic2":
+		clearInterval(pic_time);
+		break;
+		case "pic3":
+		clearInterval(pic_time);
+		break;
+	}
+}
+//自动播放图片继续函数
+function go(event){
+	var event=event||window.event;
+	var target=event.target||event.srcElement; 
+	switch(target.id){
+		case "pic1":
+		pic_index = 1; 
+		pic_time = setInterval(autobofang,3000);
+		break;
+		case "pic2":
+		pic_index = 2; 
+		pic_time = setInterval(autobofang,3000);
+		break;
+		case "pic3":
+		pic_index = 3; 
+		pic_time = setInterval(autobofang,3000); 
+		break;
+	}
+}
+}
+</script>
+</div>
+</body>
+</html>
